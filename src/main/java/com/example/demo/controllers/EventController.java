@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/events")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://musictime.vercel.app")
 public class EventController {
     @Autowired
     private EventService eventService;
