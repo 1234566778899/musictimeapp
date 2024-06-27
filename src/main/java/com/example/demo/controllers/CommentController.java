@@ -17,7 +17,6 @@ public class CommentController {
     public Comment addComment(@RequestBody Comment comment) {
         return commentService.addComment(comment);
     }
-    
     @GetMapping("/{id}")
     public List<Comment> getComment(@PathVariable long id) {
         return commentService.getComments(id);
