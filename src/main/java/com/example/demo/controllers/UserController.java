@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/users")
-@CrossOrigin(origins = "https://musictime.vercel.app")
+@CrossOrigin(origins = "https://musictime-uzv.vercel.app")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -60,6 +60,7 @@ public class UserController {
     public List<User> getAllMusical(){
         return userService.getAllMusicals();
     }
+    
     @PutMapping("/photo/{id}")
     public User updatePhoto(@PathVariable Long id,
                                                 @RequestParam("photo") MultipartFile photo) throws IOException {

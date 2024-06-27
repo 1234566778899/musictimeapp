@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/comments")
-@CrossOrigin(origins = "https://musictime.vercel.app")
+@CrossOrigin(origins = "https://musictime-uzv.vercel.app")
 public class CommentController {
     @Autowired
     private CommentService commentService;
