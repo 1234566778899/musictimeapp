@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "/ratings")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://musictime-uzv.vercel.app")
 public class RatingController {
     @Autowired
     private RatingService ratingService;
