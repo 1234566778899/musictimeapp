@@ -17,15 +17,16 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Java version
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
+          distribution: 'microsoft'
 
       - name: Build with Maven
         run: mvn clean install
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
@@ -41,20 +42,20 @@ jobs:
   
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: java-app
       
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6911ABCC81D94FBDA5370D5F4779E689 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CA09D8D45ECB42828EFF699F2D827122 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AB7DA81221874FDA9383B7167E0A00FC }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A270602BF59744C8AAEB3E2117DFDEEF }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D23DE9CBAE1C480D962B5FE4AC63B147 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_65AAF91F16554EE7BAE7F3AC50E53326 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'musictimeapp'
           slot-name: 'Production'
