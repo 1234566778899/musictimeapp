@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/users")
 @CrossOrigin(origins = "https://musictime-uzv.vercel.app")
-public class UserController {
+public class    UserController {
     @Autowired
     private UserService userService;
     @PostMapping
@@ -20,6 +20,7 @@ public class UserController {
         System.out.println(user);
         return userService.create(user);
     }
+
     @PostMapping("/customer")
     public User createCustomer(@RequestBody User user) {
         return userService.registerCustomer(user);
