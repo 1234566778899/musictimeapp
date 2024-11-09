@@ -23,7 +23,7 @@ public class User {
     @Column(name = "photo")
     private byte[] photo;
 
-    //musical
+    //musical.
     private String musicalName;
     private String managerFirstName;
     private String managerLastName;
