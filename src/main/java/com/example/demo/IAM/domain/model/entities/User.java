@@ -33,7 +33,7 @@ public class User {
     private String genre;
     private String typeContract;
 
-    //enterprice
+    //enterprice.
     private String businessName;
     private String businessType;
     private String businessLocation;
